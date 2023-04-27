@@ -25,7 +25,7 @@ async function sendRequest(url, { arg }) {
 export default function HomePage() {
   const { trigger } = useSWRMutation("/api/products", sendRequest);
 
-  async function handleSubmit(event) {
+  async function handleAddProduct(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -42,7 +42,7 @@ export default function HomePage() {
         </span>
         Fish Shop
       </Heading>
-      <ProductForm onSubmit={handleSubmit} value="" />
+      <ProductForm onSubmit={handleAddProduct} value="" />
       <hr />
       <ProductList />
     </>
