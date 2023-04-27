@@ -44,11 +44,21 @@ export default function ProductDetailsPage() {
     // Here you are preparing your updated data to be handed over to your sendRequest function.
     await trigger(productData);
   }
+  async function handleDelete() {
+    await fetch(`/api/products/${id}`, {
+      method: "DELETE",
+    });
+    router.push("/");
+  }
 
   return (
     <>
       <Product />
-      <FormChangeData value={data} onSubmit={handleEdit} />
+      <FormChangeData
+        value={data}
+        onSubmit={handleEdit}
+        onDelete={handleDelete}
+      />
     </>
   );
 }

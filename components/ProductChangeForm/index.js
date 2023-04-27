@@ -1,7 +1,12 @@
 import { StyledForm, StyledHeading, StyledLabel } from "./ProductForm.styled";
 import { StyledButton } from "../Button/Button.styled";
 
-export default function ProductChangeForm({ value, onSubmit, isEditMode }) {
+export default function ProductChangeForm({
+  value,
+  onSubmit,
+  isEditMode,
+  onDelete,
+}) {
   console.log(value);
   return (
     <StyledForm onSubmit={onSubmit}>
@@ -38,6 +43,9 @@ export default function ProductChangeForm({ value, onSubmit, isEditMode }) {
         </select>
       </StyledLabel>
       <StyledButton type="submit">Update</StyledButton>
+      <StyledButton onClick={onDelete} type="button">
+        Delete
+      </StyledButton>
     </StyledForm>
   );
 }

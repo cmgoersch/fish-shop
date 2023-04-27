@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ProductCard } from "./Product.styled";
 import { StyledLink } from "../Link/Link.styled";
 import Comments from "../Comments";
+import { StyledButton } from "../Button/Button.styled";
 
 export default function Product() {
   const router = useRouter();
@@ -27,6 +28,9 @@ export default function Product() {
       </p>
       {data.reviews.length > 0 && <Comments reviews={data.reviews} />}
       <StyledLink href="/">Back to all</StyledLink>
+      {/* <StyledButton onClick={onDelete(id)} type="button">
+        Delete
+      </StyledButton> */}
     </ProductCard>
   );
 }
