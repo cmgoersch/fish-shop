@@ -4,7 +4,7 @@ import { StyledButton } from "../Button/Button.styled";
 export default function ProductForm({ value, onSubmit, isEditMode }) {
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>Add a new Fish</StyledHeading>
+      <StyledHeading>Change Data</StyledHeading>
       <StyledLabel htmlFor="name">
         Name:
         <input type="text" id="name" name="name" />
@@ -25,7 +25,8 @@ export default function ProductForm({ value, onSubmit, isEditMode }) {
           <option value="GBP">GBP</option>
         </select>
       </StyledLabel>
-      <StyledButton type="submit">Submit</StyledButton>
+      <StyledButton type="submit">Update</StyledButton>
+      <StyledButton type="submit">Delete</StyledButton>
     </StyledForm>
   );
 }
